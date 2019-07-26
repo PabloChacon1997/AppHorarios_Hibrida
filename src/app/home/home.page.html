@@ -1,25 +1,33 @@
 <ion-content padding>
 
-  <form #form="ngForm" (ngSubmit)="enviarFormulario()">
+    <form #form="ngForm" (ngSubmit)="enviarFormulario()">
+        <ion-header>
+            <ion-toolbar color="primary">
+                <ion-title style="text-align: center; font-family: sans-serif; ">
+                    BIENVENIDO
+                </ion-title>
+            </ion-toolbar>
+        </ion-header>
+        <ion-list>
+            <br>
+            <br>
+            <br>
+            <img src="assets/icon/descarga.png" alt="Logo_instituto">
+            <ion-item>
+                <ion-label position="floating">Usuario</ion-label>
+                <ion-input type="text" [(ngModel)]="usuarioIn" name="usuarioIn" required></ion-input>
+            </ion-item>
 
-    <ion-list>
+            <ion-item>
+                <ion-label position="floating">Contraseña</ion-label>
+                <ion-input type="text" [(ngModel)]="contraseniaIn" name="contraseniaIn" required></ion-input>
+            </ion-item>
+
+            <ion-button expand="block" type="submit" [disabled]="form.invalid">
+                Login
+            </ion-button>
+        </ion-list>
 
 
-      <ion-item>
-        <ion-label position="floating">Usuario</ion-label>
-        <ion-input type="text" [(ngModel)]="usuarioIn" name="usuarioIn" required></ion-input>
-      </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Contraseña</ion-label>
-        <ion-input type="text" [(ngModel)]="contraseniaIn" name="contraseniaIn" required></ion-input>
-      </ion-item>
-
-      <ion-button expand="block" type="submit" [disabled]="form.invalid">
-        Login
-      </ion-button>
-    </ion-list>
-
-
-  </form>
+    </form>
 </ion-content>
